@@ -35,4 +35,6 @@ const qBank = [
         correctAnswer: `Elephant`
     },
 ]
+
 export default qBank;
+
