@@ -23,7 +23,9 @@ class Quiz extends Component {
 render(){
   return (
     <div className="main">
-      <div className="title">Quiz</div>
+        <h4 class="titleText">
+        Quiz
+        </h4>
 
       <div className="content">
       {this.state.question.length > 0 && this.state.question.map(

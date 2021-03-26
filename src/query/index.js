@@ -17,19 +17,22 @@ const qBank = [
         id: 0,
         question: `Choose the name of animal`,
         options:  [`Lion`, `Tiger`, `Leopard`, `Fox`],
+        Images: [`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv-TxQ9_oM6iUtrUn8LP3Iz3ZqkWPVTBRwSA&usqp=CAU`],
         answer: `Fox`
     },
     {
         id: 0,
         question: `Find the name of animal`,
         options:  [`Lion`, `Tiger`, `Leopard`, `Fox`],
+         Images: [`https://images.pexels.com/photos/39857/leopard-leopard-spots-animal-wild-39857.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500`],
         answer: `Leopard`
     },
     {
         id: 0,
         question: `Find the name of animal`,
-        options: [`Lion`, `Tiger`, `Leopard`, `Fox`],
-        answer: `Fox`
+        options: [`Lion`, `Tiger`, `Elephant`, `Fox`],
+        Images: [`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZBI3I6LwLuvC3fraSJQZ_6dflpctMEDllA&usqp=CAU`],
+        answer: `Elephant`
     },
 ]
     // n = 5 to export 5 question

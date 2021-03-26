@@ -11,7 +11,7 @@ const Question = ({ question, options , Images }) => {
        
         <div className="card"/>
            <div className="question">{question}</div>
-          <div className="card_image"><img src={Images} /></div> 
+          <div className="card_image"><img  src={Images} /></div> 
           <div className="optionsBtn">
         {options.map((text, i) => (
            
