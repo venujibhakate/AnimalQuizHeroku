@@ -16,8 +16,21 @@ class Quiz extends Component {
 
   };
   }
+  
+  shuffle = (array) =>{
+    var currentIndex = array.length;
+    // var citrus = qBank.slice(1, 2);
+// console.log(citrus , 'test')
+    var randomArray = []
+    while(randomArray.length !== currentIndex) {  
+      var randomIndex = Math.floor(Math.random() * currentIndex);
+      if(!randomArray.includes(array[randomIndex])){
+        randomArray.push(array[randomIndex]);
+      }
+    }
+    return randomArray;
+  }
 
-    
   handleChange = (event) => {
     this.setState({value: event.target.value});
   }
@@ -25,7 +38,7 @@ class Quiz extends Component {
 
   setStateQuestion = () => {
     this.setState({
-      question:qBank
+      question: this.shuffle(qBank)
     })
   }
 
@@ -49,7 +62,8 @@ class Quiz extends Component {
   this.setStateQuestion();
   this.setState({
     score: 0, 
-    responses: 0
+    responses: 0,
+    question: this.shuffle(qBank)
   });
 };
 render(){
