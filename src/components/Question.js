@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from "react";
 import "./Question.css";
 
-const Question = ({ question, options , Images }) => {
+const Question = ({ question, options , Images , selected }) => {
+   const [answer, setAnswer] = useState(options);
     return (
             
            <div className="main">
@@ -18,6 +19,10 @@ const Question = ({ question, options , Images }) => {
          <button
               key={i}
               className="btn"
+              onClick={() => {
+               setAnswer();
+               selected(text);
+              }}
               > {text}
          </button>
       

@@ -38,6 +38,8 @@ img {
   }
   
   .btn:hover {
-    background-color: wheat;
+    background-color: #62d7db;
+    border: 1px solid #62d7db;
+
   }
   
