@@ -1,7 +1,7 @@
 const qBank = [
     {
         id: 0,
-        question: `Choose the name of animal`,
+        question: `What do you see in the below picture?`,
         options: [`Lion`, `Tiger`, `Leopard`, `Fox`],
         Images: [`https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500`],
         answer: `Tiger`

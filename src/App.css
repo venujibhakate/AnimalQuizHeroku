@@ -1,4 +1,10 @@
+body {
+  color: #272727;
+  font-family: 'Quicksand', serif;
+  /* background-color: #f1f1f1; */
+  background-image: url('./bganimal.jpg');
 
+}
 .title {
   width: auto;
   background-color: black;
@@ -10,7 +16,7 @@
 }
 .content {
   text-align: center;
-  margin-top: 50px;
-  padding: 50px;
   background-color: beige;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
