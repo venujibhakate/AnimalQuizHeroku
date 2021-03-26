@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { render } from '@testing-library/react';
+import React, {Component} from 'react';
+import query from './query';
+import Question from './components/Question'
+import "./App.css";
 
-function App() {
+class Quiz extends Component {
+  state = {
+    question: []
+  };
+
+  getQuestions = () => {
+    query().then(question => {
+      this.setState({
+        question: question
+      });
+    });
+  }
+ componentDidMount(){
+   this.getQuestions();
+ }
+
+render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <div className="title">Quiz</div>
+
+      <div className="content">
+      {this.state.question.length > 0 && this.state.question.map(
+        ({question, options , Images}) => 
+        <Question 
+        className="queryCard"
+        Images={Images}
+        question={question}
+        options={options}
+/>
+      )}
+      </div>
     </div>
   );
 }
 
-export default App;
+}
+export default Quiz;
