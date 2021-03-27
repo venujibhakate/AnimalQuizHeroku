@@ -13,6 +13,7 @@ class Quiz extends Component {
     question: [],
     score:0,
     responses:0,
+    currentQuestion: 0
 
   };
   }
@@ -43,6 +44,7 @@ class Quiz extends Component {
   }
 
   selectedAnswer = (options, correctOption) => {
+    this.state.currentQuestion+=1
     if (options === correctOption) {
       this.setState({
         score: this.state.score + 1
@@ -63,7 +65,8 @@ class Quiz extends Component {
   this.setState({
     score: 0, 
     responses: 0,
-    question: this.shuffle(qBank)
+    question: this.shuffle(qBank),
+    currentQuestion:0
   });
 };
 render(){
@@ -82,12 +85,10 @@ render(){
           Name: 
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
-        &nbsp;
-        {/* <input type="submit" value="Submit" id="myBtn" placeholder="What's ya name?"/> */}
         <h1 class="userName">Hii { this.state.value}!!</h1>
         </form>
    
-      {this.state.question.length > 0 && this.state.responses < 10 && this.state.question.map(
+      {this.state.question.length > 0 && this.state.responses < 10 && this.state.question.slice(this.state.currentQuestion,this.state.currentQuestion+1).map(
         ({question, options , Images , correctAnswer }) => 
         <Question 
         className="queryCard"

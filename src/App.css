@@ -38,10 +38,9 @@ body {
 }
 .content {
   text-align: center;
-  /* background-color: #fff; */
+  background-color: #fff;
   padding-top: 10px;
   padding-bottom: 20px;
-  
 }
 .text {
   text-align: center;

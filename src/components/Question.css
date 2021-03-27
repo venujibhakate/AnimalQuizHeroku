@@ -44,7 +44,7 @@ img {
 
   }
 
-  .btn:focus {
+  .btn:active {
     background-color:#C0C0C0;
 }
   
