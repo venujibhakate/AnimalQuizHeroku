@@ -11,7 +11,6 @@ const Question = ({ question, options , Images , selected }) => {
         {/* //         <img src={Image} />
         //       ))} */}
        
-        <div className="card"/>
            <div className="question">{question}</div>
           <div className="card_image"><img  src={Images} /></div> 
           <div className="optionsBtn">
@@ -21,7 +20,7 @@ const Question = ({ question, options , Images , selected }) => {
               key={i}
               className="btn"
               onClick={() => {
-               setAnswer();
+               // setAnswer([text]);
                selected(text);
               }}
               > {text}

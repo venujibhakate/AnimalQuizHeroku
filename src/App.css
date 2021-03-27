@@ -38,10 +38,23 @@ body {
 }
 .content {
   text-align: center;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding-top: 10px;
   padding-bottom: 20px;
+  animation: pulse 5s infinite;
+}
+@keyframes pulse {
+  0% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: wheat;
+  }
 }
 .text {
   text-align: center;
 }
+.userName {
+  text-transform: capitalize;
+}
+

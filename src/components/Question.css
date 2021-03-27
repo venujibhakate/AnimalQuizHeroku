@@ -15,6 +15,7 @@ img {
     max-width: 100%;
     vertical-align: middle;
   }
+  
 
 .optionsBtn {
     margin: 10px;
@@ -42,4 +43,8 @@ img {
     border: 1px solid #62d7db;
 
   }
+
+  .btn:focus {
+    background-color:#C0C0C0;
+}
   

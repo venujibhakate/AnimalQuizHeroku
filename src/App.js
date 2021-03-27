@@ -49,9 +49,9 @@ class Quiz extends Component {
       });
     }
     this.setState({
-      responses: this.state.responses < 5
+      responses: this.state.responses < 10
         ? this.state.responses + 1
-        : 5
+        : 10
     });
   };
 
@@ -69,9 +69,13 @@ class Quiz extends Component {
 render(){
   return (
     <div className="main">
+     
         <h4 class="titleText">
-        Quiz
+        {/* <marquee  direction="right"> */}
+        Animals Quiz
+        {/* </marquee> */}
         </h4>
+     
       <div className="content">
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -80,10 +84,10 @@ render(){
         </label>
         &nbsp;
         {/* <input type="submit" value="Submit" id="myBtn" placeholder="What's ya name?"/> */}
-        <h1>welocome { this.state.value}!!</h1>
+        <h1 class="userName">Hii { this.state.value}!!</h1>
         </form>
    
-      {this.state.question.length > 0 && this.state.question.map(
+      {this.state.question.length > 0 && this.state.responses < 10 && this.state.question.map(
         ({question, options , Images , correctAnswer }) => 
         <Question 
         className="queryCard"
@@ -97,7 +101,7 @@ render(){
        
       )}
       {
-        this.state.responses === 5
+        this.state.responses === 10
           ? (<h4>
             <Score
             score={this.state.score}
