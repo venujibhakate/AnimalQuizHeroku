@@ -48,3 +48,14 @@ img {
     background-color:#C0C0C0;
 }
   
+.Reset {
+  background-color: #62d7db;
+  color: black;
+  border-radius: 20px;
+  padding: 10px 30px;
+}
+.Reset:hover {
+  background-color: transparent;
+  border-radius: 20px;
+
+}
