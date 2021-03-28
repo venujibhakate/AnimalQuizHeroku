@@ -7,5 +7,4 @@ const Score = ({score, playAgain, value}) => (
     <button className="Reset" onClick={playAgain} > Play Again </button>
   </div>
 )
-  
 export default Score;
