@@ -38,11 +38,6 @@ img {
     background: transparent;
   }
   
-  .btn:hover {
-    background-color: #62d7db;
-    border: 1px solid #62d7db;
-
-  }
 
   .btn:active {
     background-color:#C0C0C0;
