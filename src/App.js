@@ -70,6 +70,7 @@ class Quiz extends Component {
   });
 };
 render(){
+
   return (
     <div className="main">
      
@@ -95,6 +96,7 @@ render(){
         Images={Images}
         question={question}
         options={options}
+        point={this.state.score}
         selected={options => this. selectedAnswer(options, correctAnswer)}/>
         
         
@@ -120,6 +122,7 @@ render(){
 }
 
 export default Quiz;
+
 
 
 

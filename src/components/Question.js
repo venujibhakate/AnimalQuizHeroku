@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./Question.css";
 
 
-const Question = ({ question, options , Images , selected }) => {
+const Question = ({ question, options , Images , selected , point}) => {
    const [answer, setAnswer] = useState(options);
     return (
             
@@ -29,6 +29,10 @@ const Question = ({ question, options , Images , selected }) => {
        
         ))}
            </div>
+           <div className="points">
+				Your points  {point} 
+			
+		     </div>
         
         </div>
        
