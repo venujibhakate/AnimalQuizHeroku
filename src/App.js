@@ -13,11 +13,12 @@ class Quiz extends Component {
     question: [],
     score:0,
     responses:0,
-    currentQuestion: 0
+    currentQuestion: 0,
+    wrong:0
 
   };
   }
-  
+
   shuffle = (array) =>{
     var currentIndex = array.length;
     // var citrus = qBank.slice(1, 2);
@@ -47,15 +48,28 @@ class Quiz extends Component {
     this.state.currentQuestion+=1
     if (options === correctOption) {
       this.setState({
-        score: this.state.score + 1
+        score: this.state.score + 1,
+    
       });
+    }
+    else {
+      this.setState({
+        wrong: this.state.wrong+1
+      })
     }
     this.setState({
       responses: this.state.responses < 10
         ? this.state.responses + 1
         : 10
     });
+    // options.parentElement.classList.add(apply)
+
   };
+
+  // MessageShow = (options , correctOption) => {
+  //   const apply = options === correctOption ? "correct" : "incorrect";
+  //   console.log(apply);
+  // }
 
  componentDidMount(){
    this.setStateQuestion();
@@ -63,7 +77,8 @@ class Quiz extends Component {
  playAgain = () => {
   this.setStateQuestion();
   this.setState({
-    score: 0, 
+    score: 0,
+    wrong:0,
     responses: 0,
     question: this.shuffle(qBank),
     currentQuestion:0
@@ -90,14 +105,15 @@ render(){
         </form>
    
       {this.state.question.length > 0 && this.state.responses < 10 && this.state.question.slice(this.state.currentQuestion,this.state.currentQuestion+1).map(
-        ({question, options , Images , correctAnswer }) => 
+        ({question, options , Images , correctAnswer}) => 
         <Question 
         className="queryCard"
         Images={Images}
         question={question}
         options={options}
         point={this.state.score}
-        selected={options => this. selectedAnswer(options, correctAnswer)}/>
+        selected={options => this. selectedAnswer(options, correctAnswer)}
+        />
         
         
         
@@ -108,6 +124,7 @@ render(){
           ? (<h4>
             <Score
             score={this.state.score}
+            wrong={this.state.wrong}
             playAgain={this.playAgain}
           /></h4>)
           : null
@@ -122,10 +139,4 @@ render(){
 }
 
 export default Quiz;
-
-
-
-
-
-
 

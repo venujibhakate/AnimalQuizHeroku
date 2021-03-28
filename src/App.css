@@ -48,3 +48,11 @@ body {
   text-transform: capitalize;
 }
 
+.correct {
+  background-color: green;
+  color: #fff;
+}
+.incorrect {
+  background-color: red;
+  color: #fff;
+} 

@@ -10,12 +10,22 @@
     color: #4c99ba;;
 }
 img {
-    width: 350px;
-    height: auto;
+    /* width: 350px;
+    height: auto; */
     max-width: 100%;
     vertical-align: middle;
   }
-  
+
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+}
+.won {
+  color: green;
+}
+.mistakes {
+  color: red;
+}
 
 .optionsBtn {
     margin: 10px;
