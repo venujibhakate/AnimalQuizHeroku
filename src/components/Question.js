@@ -2,7 +2,7 @@ import React from 'react';
 import "./Question.css";
 
 
-const Question = ({ question, options , Images , selected , point,status}) => {
+const Question = ({ question, options , Images , selected , point,status, playAgains}) => {
 
    return (
             
@@ -32,10 +32,10 @@ const Question = ({ question, options , Images , selected , point,status}) => {
 
 {/* <div className="points"> {status} </div> */}
            </div>
-           <div className="points">
+           {/* <div className="points">
 				Your points  {point} 
 			
-		     </div>
+		     </div> */}
         
         </div>
   

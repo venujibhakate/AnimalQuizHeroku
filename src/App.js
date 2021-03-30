@@ -15,7 +15,8 @@ class Quiz extends Component {
     responses:0,
     currentQuestion: 0,
     wrong:0,
-    status: ''
+    status: '',
+    count:1
 
   };
   }
@@ -33,6 +34,11 @@ class Quiz extends Component {
     }
     return randomArray;
   }
+  // incrementCount= () => {
+  //   this.setState({
+  //     count:this.state.count+1
+  //   })
+  // }
 
   handleChange = (event) => {
     this.setState({value: event.target.value});
@@ -46,18 +52,21 @@ class Quiz extends Component {
   }
 
   selectedAnswer = (options, correctOption) => {
-    this.state.currentQuestion+=1
     if (options === correctOption) {
+      this.state.currentQuestion+=1
       this.setState({
+         status:  "",
         score: this.state.score + 1,
-        status: "correct!!"
+        // status:  ("correct!!")
     
       });
     }
     else {
       this.setState({
+        status:   ("sorry wrong choose correct option!"),
         wrong: this.state.wrong+1,
-        status: "sorry wrong!"
+
+        
       })
     }
     this.setState({
@@ -73,6 +82,7 @@ class Quiz extends Component {
    this.setStateQuestion();
  }
  playAgain = () => {
+  this.state.count+=1
   this.setStateQuestion();
   this.setState({
     score: 0,
@@ -80,11 +90,11 @@ class Quiz extends Component {
     responses: 0,
     question: this.shuffle(qBank),
     currentQuestion:0,
+    status:  "",
 
   });
 };
 render(){
-
   return (
     <div className="main">
      
@@ -121,7 +131,9 @@ render(){
           ? (<h4>
             <Score
             score={this.state.score}
+            count={this.state.count}
             wrong={this.state.wrong}
+            value={this.state.value}
             playAgain={this.playAgain}
           /></h4>)
           : null
