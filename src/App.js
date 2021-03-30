@@ -14,7 +14,9 @@ class Quiz extends Component {
     score:0,
     responses:0,
     currentQuestion: 0,
-    wrong:0
+    wrong:0,
+    clickedAnswer: 0,
+    correctAnswers:0
 
   };
   }
@@ -54,7 +56,7 @@ class Quiz extends Component {
     }
     else {
       this.setState({
-        wrong: this.state.wrong+1
+        wrong: this.state.wrong+1,
       })
     }
     this.setState({
@@ -62,14 +64,9 @@ class Quiz extends Component {
         ? this.state.responses + 1
         : 10
     });
-    // options.parentElement.classList.add(apply)
+
 
   };
-
-  // MessageShow = (options , correctOption) => {
-  //   const apply = options === correctOption ? "correct" : "incorrect";
-  //   console.log(apply);
-  // }
 
  componentDidMount(){
    this.setStateQuestion();
@@ -81,7 +78,7 @@ class Quiz extends Component {
     wrong:0,
     responses: 0,
     question: this.shuffle(qBank),
-    currentQuestion:0
+    currentQuestion:0,
   });
 };
 render(){
