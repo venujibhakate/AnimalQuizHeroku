@@ -15,8 +15,7 @@ class Quiz extends Component {
     responses:0,
     currentQuestion: 0,
     wrong:0,
-    clickedAnswer: 0,
-    correctAnswers:0
+    status: ''
 
   };
   }
@@ -51,12 +50,14 @@ class Quiz extends Component {
     if (options === correctOption) {
       this.setState({
         score: this.state.score + 1,
+        status: "correct!!"
     
       });
     }
     else {
       this.setState({
         wrong: this.state.wrong+1,
+        status: "sorry wrong!"
       })
     }
     this.setState({
@@ -79,6 +80,7 @@ class Quiz extends Component {
     responses: 0,
     question: this.shuffle(qBank),
     currentQuestion:0,
+
   });
 };
 render(){
@@ -109,13 +111,11 @@ render(){
         question={question}
         options={options}
         point={this.state.score}
+        status={this.state.status}
         selected={options => this. selectedAnswer(options, correctAnswer)}
         />
         
-        
-        
-       
-      )}
+  )}
       {
         this.state.responses === 10
           ? (<h4>

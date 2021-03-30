@@ -2,7 +2,7 @@ import React from 'react';
 import "./Question.css";
 
 
-const Question = ({ question, options , Images , selected , point}) => {
+const Question = ({ question, options , Images , selected , point,status}) => {
 
    return (
             
@@ -10,8 +10,10 @@ const Question = ({ question, options , Images , selected , point}) => {
         {/* //     {Images.map((Image, i) => ( */}
         {/* //         <img src={Image} />
         //       ))} */}
+
            <div className="question">{question}</div>
-          <div className="card_image"><img style={{width: "350px", height: "250px"}}  src={Images} /></div> 
+          <div className="card_image"><img style={{width: "340px", height: "240px"}}  src={Images} /></div> 
+          <div className="points"> {status} </div> 
           <div className="optionsBtn">
         {options.map((text, i) => (
            
@@ -27,8 +29,8 @@ const Question = ({ question, options , Images , selected , point}) => {
       
        
         ))}
-       
 
+{/* <div className="points"> {status} </div> */}
            </div>
            <div className="points">
 				Your points  {point} 
@@ -36,6 +38,7 @@ const Question = ({ question, options , Images , selected , point}) => {
 		     </div>
         
         </div>
+  
        
         
     )
