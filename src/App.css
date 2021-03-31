@@ -56,3 +56,10 @@ body {
   background-color: red;
   color: #fff;
 } 
+
+input {
+  padding: 8px;
+}
+.lable {
+  font-size: 20px;
+}

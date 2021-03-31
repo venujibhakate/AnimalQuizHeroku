@@ -16,7 +16,9 @@ class Quiz extends Component {
     currentQuestion: 0,
     wrong:0,
     status: '',
-    count:1
+    count:1,
+    firstName: '',
+    firstNameError: '',
 
   };
   }
@@ -43,8 +45,7 @@ class Quiz extends Component {
   handleChange = (event) => {
     this.setState({value: event.target.value});
   }
-
-
+ 
   setStateQuestion = () => {
     this.setState({
       question: this.shuffle(qBank)
@@ -63,16 +64,16 @@ class Quiz extends Component {
     }
     else {
       this.setState({
-        status:   ("sorry wrong choose correct option!"),
+        status:   ("sorry it is wrong answer , choose correct option!"),
         wrong: this.state.wrong+1,
 
         
       })
     }
     this.setState({
-      responses: this.state.responses < 10
-        ? this.state.responses + 1
-        : 10
+      responses: this.state.responses <  this.state.currentQuestion
+        ? this.state.responses + 1 
+        :  this.state.currentQuestion
     });
 
 
@@ -105,10 +106,11 @@ render(){
         </h4>
      
       <div className="content">
+    
       <form onSubmit={this.handleSubmit}>
-        <label>
+        <label class="lable">
           Name: 
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text"  placeholder="Enter your Name" value={this.state.value} onChange={this.handleChange} required></input>
         </label>
         <h1 class="userName">Hii { this.state.value}!!</h1>
         </form>
@@ -127,7 +129,7 @@ render(){
         
   )}
       {
-        this.state.responses === 10
+        this.state.responses ===  10
           ? (<h4>
             <Score
             score={this.state.score}
@@ -148,4 +150,7 @@ render(){
 }
 
 export default Quiz;
+
+
+
 

@@ -2,11 +2,12 @@ import React from 'react';
 import "./Question.css";
 
 
-const Question = ({ question, options , Images , selected , point,status, playAgains}) => {
+const Question = ({ question, options , Images , selected ,status}) => {
 
    return (
-            
+      
            <div className="main">
+                {/* <h1 class="userName">Hii {value}!!</h1> */}
         {/* //     {Images.map((Image, i) => ( */}
         {/* //         <img src={Image} />
         //       ))} */}
@@ -38,6 +39,7 @@ const Question = ({ question, options , Images , selected , point,status, playAg
 		     </div> */}
         
         </div>
+
   
        
         
